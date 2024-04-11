@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.header{
+    background-color: rgb(209, 58, 58);
+    color: whitesmoke;
+}
+
+h1{
+    padding: 20px 50px;
+    font-size: 1.5rem;
+}
+
+.sidebar{
+    /* width: 20vw;
+    height: 90vh; */
+    grid-column: 1 / 2 ;
+    grid-row: 2;
+    background-color: rgb(231, 225, 225);
+    color: rgb(24, 24, 24);
+    font-weight: bold;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.catagories{
+    text-align: center;
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.sidebar .catagories:hover{
+    background-color: rgb(212, 203, 203);
+}
+
+
+.sidebar .project-container{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    /* background-color: aqua; */
+    padding: 0.6rem;
+    gap: 15px;
+    border-radius: 0.4rem;
+}
+
+.sidebar .project-container:hover{
+    background-color: rgb(207, 203, 195);
+}
+
+.project-container-div{
+    width: 100%;
+    margin-left: 25px;
+}
+
+#projects-title {
+    width: 90%;
+    font-size: 1.5rem;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+}
+
+.arrow .drop-down {
+    stroke:rgb(24, 24, 24);
+    stroke-width: 15px;
+    overflow: visible;
+    transform: translateY(2px);
+    fill: none;
+    transform: rotate(-90deg);
+    transition: 0.1s ease-out;
+    cursor: pointer;
+    /* background-color: aqua; */
+}
+
+/* .arrow .drop-down:hover{
+    transform: rotate(0deg);
+} */
+
+.add{
+    /* box-sizing: content-box; */
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    /* padding: 5px; */
+    /* border-radius: 50%; */
+}
+
+
+.add svg{
+    fill: none;
+    stroke: rgb(24, 24, 24);
+    stroke-width: 2px;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+}
+
+.content-container{
+    grid-column: 2 / 3;
+    grid-row-start: 2;
+}
+
+.header{
+    grid-column: 1 / 3;
+    grid-row-start: 1;
+}
+
+.selected, .sidebar .selected:hover{
+    background-color: rgb(241, 241, 241);
+}
+
+.addProjectsBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 0 25px 0 #17202e69;
+    font-weight: bold;
+    color: #09172b;
+}
+
+.addProjectsBox > :first-child{
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+
+.addProjectsBox > *{
+    margin: 1rem 0;
+}
+
+.addProjectsBox > * >* {
+    margin: 0.2rem;
+}
+
+.addProjectsBox > :nth-child(2){
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.addProjectsBox > :nth-child(2) > input{
+    border-radius: 0.3rem;
+    border: 1px solid gray;
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    color: rgb(24, 24, 24);
+}
+
+.addProjectsBox > :last-child{
+    display: flex;
+}
+
+.addProjectsBox > :last-child > :first-child{
+    margin-left: auto;
+    background-color: rgb(206, 206, 206);
+}
+
+.addProjectsBox > :last-child > :last-child{
+    background-color: rgb(255, 122, 122);
+    width: 80px;
+}
+
+#cross-button{
+    margin-left: auto;
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    transition: 0.1s;
+    border-radius: 50%;
+    transform-origin: center;
+    outline: none;
+    cursor: pointer;
+}
+
+#cross-button:hover{
+    transform: rotate(-90deg);
+}
+
+.addProjectsBox > :last-child > *{
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.9rem;
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+    cursor: pointer;
+}
+
+.addProjectsBox > :last-child > *:active{
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+
+.hide-projects{
+    display: none;
+}
+
+.arrow .projects-dropdown-active{
+    transform: rotate(0deg);
+}
+
+.project-edit, .project-delete{
+    width: 15px;
+    height: 15px;
+    fill: #242424;
+}
+
+.project-edit{
+    margin-left: auto;
+}
